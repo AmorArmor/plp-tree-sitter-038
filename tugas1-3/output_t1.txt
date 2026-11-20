@@ -1,0 +1,35 @@
+=== 1. Fungsi ===
+(module (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (return_statement (identifier)))))
+
+--- Node Anak dari Anak Pertama ---
+def -> anonim
+identifier -> bernama
+parameters -> bernama
+: -> anonim
+block -> bernama
+
+=== 2. If-Else ===
+(module (if_statement condition: (comparison_operator (identifier) (integer)) consequence: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)))))) alternative: (else_clause body: (block (expression_statement (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)))))))))
+
+--- Node Anak dari Anak Pertama ---
+if -> anonim
+comparison_operator -> bernama
+: -> anonim
+block -> bernama
+else_clause -> bernama
+
+=== 3. Kelas ===
+(module (class_definition name: (identifier) body: (block (function_definition name: (identifier) parameters: (parameters (identifier)) body: (block (return_statement (string (string_start) (string_content) (string_end))))))))
+
+--- Node Anak dari Anak Pertama ---
+class -> anonim
+identifier -> bernama
+: -> anonim
+block -> bernama
+
+=== 4. Output Error ===
+(module (ERROR (identifier) (parameters (identifier)) (identifier)))
+
+(module (if_statement condition: (comparison_operator (identifier) (integer)) consequence: (block (print_statement argument: (parenthesized_expression (ERROR (string_start)) (identifier)))) alternative: (else_clause (ERROR (string (string_start) (string_content) (string_end))) body: (block))))
+
+(module (class_definition name: (identifier) (ERROR (identifier) (identifier)) superclasses: (argument_list (identifier)) body: (block (return_statement (string (string_start) (string_content) (string_end))))))
