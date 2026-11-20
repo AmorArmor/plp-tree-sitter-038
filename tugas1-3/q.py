@@ -13,7 +13,7 @@ tree = parser.parse(kode)
 # atau 'captures' biasa.
 if "matches" in sys.argv:
     for _, cap in QueryCursor(Query(PY, pola)).matches(tree.root_node):
-        nama = cap["nama"][0].text.decode()
+        nama = cap["nama"][0].text.decode() # type: ignore
         # Pakai .get() agar aman jika fungsi tidak punya parameter
         params_node = cap.get("params", [])
         jumlah = params_node[0].named_child_count if params_node else 0
@@ -22,4 +22,4 @@ else:
     hasil = QueryCursor(Query(PY, pola)).captures(tree.root_node)
     for nama, nodes in hasil.items():
         for n in nodes:
-            print(f"@{nama}  baris {n.start_point[0] + 1}: {n.text.decode()}")
+            print(f"@{nama}  baris {n.start_point[0] + 1}: {n.text.decode()}") # type: ignore
