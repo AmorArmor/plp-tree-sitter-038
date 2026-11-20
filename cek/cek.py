@@ -32,7 +32,7 @@ def cek_file(path):
 
     # Fitur 1: komentar TODO/FIXME
     for node in QueryCursor(Q_TODO).captures(tree.root_node).get("c", []):
-        teks = node.text.decode(errors="replace").strip()
+        teks = node.text.decode(errors="replace").strip() # type: ignore
         print(f"[TODO] {path}:{node.start_point[0] + 1}: {teks}")
 
     # Fitur 2: fungsi yang lebih dari 30 baris
@@ -43,7 +43,7 @@ def cek_file(path):
             
             jumlah_baris = node_fungsi.end_point[0] - node_fungsi.start_point[0] + 1
             if jumlah_baris > 30:
-                nama_fungsi = node_nama.text.decode(errors="replace")
+                nama_fungsi = node_nama.text.decode(errors="replace") # type: ignore
                 print(f"[FUNGSI PANJANG] {path}:{node_fungsi.start_point[0] + 1}: '{nama_fungsi}' ({jumlah_baris} baris)")
 
     # Fitur 3: file yang pohonnya mengandung error
