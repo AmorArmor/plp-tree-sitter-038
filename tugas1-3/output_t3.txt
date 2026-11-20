@@ -1,0 +1,16 @@
+=== 1. fungsi.scm ===
+Fungsi: sapa, Jumlah Parameter: 1
+Fungsi: hitung_luas, Jumlah Parameter: 2
+
+=== 2. cetak.scm ===
+@fn  baris 5: print
+@fn  baris 10: print
+@args  baris 5: ("Halo", nama)
+@args  baris 10: ("Luasnya:", luas)
+
+=== 3. impor.scm ===
+@modul_biasa  baris 1: os
+@modul_from  baris 2: pathlib
+
+=== 4. docstring.scm ===
+@docstring  baris 5: """Ini adalah docstring untuk fungsi sapa."""
