@@ -1,0 +1,36 @@
+==================
+Test Dasar AND OR
+==================
+status = "open" and (umur >= 18 or premium = true)
+---
+
+(query
+  (and_expression
+    (comparison
+      (identifier)
+      (string))
+    (parenthesized
+      (or_expression
+        (comparison
+          (identifier)
+          (number))
+        (comparison
+          (identifier)
+          (boolean))))))
+
+==================
+Test IN dan CONTAINS
+==================
+kategori in ["admin", "user"] and deskripsi contains "urgent"
+---
+
+(query
+  (and_expression
+    (in_expression
+      (identifier)
+      (list
+        (string)
+        (string)))
+    (contains_expression
+      (identifier)
+      (string))))

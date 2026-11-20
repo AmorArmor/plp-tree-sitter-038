@@ -1,0 +1,1 @@
+status = "open" and (umur >= 18 or not premium = false) and kategori in ["admin"]
