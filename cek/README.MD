@@ -13,7 +13,7 @@ Pastikan Python sudah terinstal, lalu jalankan perintah berikut di terminal untu
 pip install tree-sitter tree-sitter-python
 ```
 
-Cara Menjalankan
+## Cara Menjalankan
 Gunakan terminal dan panggil skrip cek.py diikuti dengan lokasi folder repositori atau proyek Python yang ingin dianalisis. 
 
 ```bash
@@ -25,7 +25,7 @@ Contoh eksekusi pada pengujian lokal:
 ```bash
 python cek.py uji/
 ```
-Contoh Output
+## Contoh Output
 Berikut adalah contoh hasil eksekusi program ketika dijalankan pada repositori nyata (misal: repositori bottle):
 
 [TODO] bottle\bottle.py:1002: # TODO: Handle these explicitly in handle() or make them iterable.
